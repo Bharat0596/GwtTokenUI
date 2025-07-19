@@ -1,0 +1,35 @@
+<div class="signup-wrapper">
+  <div class="signup-box">
+    <h2>User Registration</h2>
+
+    <form #signupForm="ngForm" (ngSubmit)="onRegister()" class="signup-form">
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        [(ngModel)]="user.username"
+        required
+        class="form-input"
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        [(ngModel)]="user.password"
+        required
+        class="form-input"
+      />
+      <button
+        type="submit"
+        [disabled]="!signupForm.valid"
+        class="signup-btn"
+      >
+        Register
+      </button>
+    </form>
+
+    <p class="login-text">
+      Already have an account? <a routerLink="/">Sign in here</a>
+    </p>
+  </div>
+</div>
